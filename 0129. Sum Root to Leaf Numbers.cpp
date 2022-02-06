@@ -13,18 +13,18 @@ class Solution {
 public:
     int sum(TreeNode* root, int pathSum)
     {
-        if(root==NULL)
+        if (root == NULL)
             return 0;
-        
-        pathSum = pathSum*10 + root->val;
-        
-        if(!root->left && !root->right)
+
+        pathSum = pathSum * 10 + root->val;
+
+        if (!root->left && !root->right)
             return pathSum;
-        
+
         return sum(root->left, pathSum) + sum(root->right, pathSum);
     }
-    
-    
+
+
     int sumNumbers(TreeNode* root) {
         return sum(root, 0);
     }
