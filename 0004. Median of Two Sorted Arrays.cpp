@@ -33,7 +33,6 @@ public:
                 begin = i1 + 1;
 
         }
-
         return 0.0;
     }
 };
