@@ -11,25 +11,25 @@
  */
 class Solution {
 public:
-    int res=0;
+    int res = 0;
     int pathSum(TreeNode* root, int sum) {
-        if(root){
-            dfs(root,sum);
-            pathSum(root->left,sum);
-            pathSum(root->right,sum);
+        if (root) {
+            dfs(root, sum);
+            pathSum(root->left, sum);
+            pathSum(root->right, sum);
         }
-        
+
         return res;
     }
-    
-    void dfs(TreeNode* root, int sum){
-        if(!root)
+
+    void dfs(TreeNode* root, int sum) {
+        if (!root)
             return;
-        
-        if(root->val==sum)
+
+        if (root->val == sum)
             res++;
-        
-        dfs(root->left,sum-root->val);
-        dfs(root->right,sum-root->val);
+
+        dfs(root->left, sum - root->val);
+        dfs(root->right, sum - root->val);
     }
 };
